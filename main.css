@@ -1,16 +1,26 @@
 h1 {
+  font-family: 'Passion One', cursive;
   margin-bottom: 0;
-}
-
-h3 {
-  font-style: italic;
-  margin-top: 0;
 }
 
 h4 {
-  margin-bottom: 0;
+  font-family: 'Artifika', serif;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+h5 {
+  font-family: 'Passion One', cursive;
+  margin-top: 0;
+  margin-bottom: 20px;
+  text-decoration: underline;
 }
 
 body {
   background-color: #bbdefb;
+}
+
+form {
+  margin-top:10px;
+  margin-bottom: 10px;
 }

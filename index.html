@@ -3,60 +3,57 @@
   <head>
     <meta charset="utf-8">
     <title>Oh, the Places You'll Go!</title>
+    <link href="https://fonts.googleapis.com/css?family=Artifika|Passion+One" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/css/materialize.min.css">
     <link rel="stylesheet" href="/main.css">
   </head>
   <body>
     <header class="center-align">
-      <h1>Oh, the Places You'll Go!</h1>
-      <h3>Create Your Travel Bucket List to the top U.S. Cities</h3>
+      <h1><i class="material-icons medium">public</i>Oh, the Places You'll Go!</h1>
+      <h4 class="tagLine">Create your travel bucket list to the top U.S. cities</h4>
     </header>
     <main class="row">
       <div class="col s6 left-align">
-        <h4 class="center-align">Type your destination:</h4>
+        <h5 class="center-align">Add a destination:</h5>
         <form class="row" action="index.html" method="post">
           <div class="input-field col s12">
-            <select>
-              <option value="" disabled selected>Choose a city:</option>
-              <option value="1"></option>
-              <option value="2"></option>
-              <option value="3"></option>
+            <select class="city">
+              <option value="" disabled selected>Choose a city</option>
+
             </select>
-            <label>City</label><br>
-          </div><br>
+            <label>City</label>
+          </div>
           <div class="input-field col s12">
-            <select>
-              <option value="" disabled selected>Choose a state:</option>
-              <option value="1"></option>
-              <option value="2"></option>
-              <option value="3"></option>
+            <select class="state">
+              <option value="" disabled selected>Choose a state</option>
+
             </select>
-            <label>State</label><br>
-          </div><br>
+            <label>State</label>
+          </div>
+          <div class="input-field col s6">
+            <label for="days">How many days: </label>
+            <input id="days" type="number" min="1" max="90" name="days" value="1">
+            <!-- <button class="btn waves-effect waves-light deep-orange lighten-2" type="submit" name="button">Submit!<i class="material-icons right">flight_takeoff</i></button> -->
+          </div>
           <div class="input-field col s12">
-            <label for="">How many days: </label>
-            <input type="number" name="" value=""><br>
-            <button class="btn waves-effect waves-light" type="submit" name="button">Submit!<i class="material-icons right">flight_takeoff</i></button>
+            <a id="add" class="btn waves-effect waves-light hoverable deep-orange lighten-2">ADD LOCATION
+              <i class="material-icons right">flight_takeoff</i></a>
           </div>
         </form>
       </div>
       <div class="right-align">
-        <h4 class="list center-align">Your Travel List:</h4>
-        <table class="input-field col s6">
+        <h5 class="center-align">Your travel list:</h5>
+        <table class="input-field col s6 striped highlight">
           <thead>
             <tr>
               <th>City</th>
               <th>State</th>
-              <th>How many desired days</th>
+              <th># of days</th>
             </tr>
            </thead>
-           <tbody>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
+           <tbody class="list">
+
            </tbody>
         </table>
       </div>
