@@ -10,7 +10,7 @@
   </head>
   <body>
     <header class="center-align">
-      <h1><i class="material-icons medium">public</i>Oh, the Places You'll Go!</h1>
+      <h1><i class="material-icons medium">public</i>Oh, the Places You'll Go!<i class="material-icons medium">public</i></h1>
       <h4 class="tagLine">Create your travel bucket list to the top U.S. cities</h4>
     </header>
     <main class="row">
@@ -18,15 +18,15 @@
         <h5 class="center-align">Add a destination:</h5>
         <form class="row" action="index.html" method="post">
           <div class="input-field col s12">
-            <select class="city">
-              <option value="" disabled selected>Choose a city</option>
+            <select id="city">
+              <option disabled selected>Choose a city</option>
 
             </select>
             <label>City</label>
           </div>
           <div class="input-field col s12">
-            <select class="state">
-              <option value="" disabled selected>Choose a state</option>
+            <select id="state">
+              <option disabled selected>Choose a state</option>
 
             </select>
             <label>State</label>
@@ -37,7 +37,7 @@
             <!-- <button class="btn waves-effect waves-light deep-orange lighten-2" type="submit" name="button">Submit!<i class="material-icons right">flight_takeoff</i></button> -->
           </div>
           <div class="input-field col s12">
-            <a id="add" class="btn waves-effect waves-light hoverable deep-orange lighten-2">ADD LOCATION
+            <a id="addLocation" class="btn waves-effect waves-light hoverable deep-orange lighten-2">ADD LOCATION
               <i class="material-icons right">flight_takeoff</i></a>
           </div>
         </form>
