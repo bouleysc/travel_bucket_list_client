@@ -1,23 +1,52 @@
 $(document).ready(function(){
   const baseURL = "https://peaceful-woodland-20463.herokuapp.com/places"
-  $('select').material_select();
-  $.get(baseURL, cities)
-  $.get(baseURL, state)
+  $.get(baseURL, travelList)
+  addPlace()
 })
 
-function cities(data){
+function travelList(data){
   for (var i=0; i < data.length; i++){
-    $('#city').append(`<option value="${data[i].id}">${data[i].city}</option>`);
-    // $('#state').append(`<option value="${data[i].id}">${data[i].state}</option>`);
+    $('.list').append
+    (`<tr>
+        <td>${i+1}.</td>
+        <td>${data[i].city}</td>
+        <td>${data[i].state}</td>
+        <td>${data[i].rating}</td>
+        <td><a class="btn-floating btn-small waves-effect waves-light teal lighten-2"><i class="material-icons">mode_edit</i></a>
+            <a class="btn-floating btn-small waves-effect waves-light red"><i class="material-icons">remove</i></a></td>
+      </tr>`);
   }
-  $('select').material_select();
 }
 
-// function state(){
-//   $('#city :selected').change(function(){
-//     for (var i=0; i < data.length; i++){
-//       $('#state').append(`<option value="${data[i].id}">${data[i].state}</option>`);
-//     }
-//   })
-//   $('select').material_select();
+function addPlace(){
+  $('#addLocation').click(function(event){
+    event.preventDefault();
+    const $city = $('#city').val();
+    const $state = $('#state').val();
+    const $rating = $('#rating').val();
+    console.log($city, $state, $rating)
+    // addItem($city,$state,$rating)
+  })
+}
+
+// function addItem($city,$state,$rating){
+//   const myHeaders = new Headers()
+//   myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
+//   const setting = {
+//     method: 'Post',
+//     headers: myHeaders,
+//     contentType: 'application/json',
+//     body:$('.list').append
+//         (`<tr>
+//             <td></td>
+//             <td>${$city}</td>
+//             <td>${$state}</td>
+//             <td>${$rating}</td>
+//             <td><a class="btn-floating btn-small waves-effect waves-light teal lighten-2"><i class="material-icons">mode_edit</i></a>
+//                 <a class="btn-floating btn-small waves-effect waves-light red"><i class="material-icons">remove</i></a></td>
+//           </tr>`)
+//   }
+//   $.post(baseURL, {city, state, rating})
+//   fetch(baseURL, setting)
+//   .then(data => data.json())
 // }

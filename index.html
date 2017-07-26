@@ -1,70 +1,67 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Oh, the Places You'll Go!</title>
-    <link href="https://fonts.googleapis.com/css?family=Artifika|Passion+One" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/css/materialize.min.css">
-    <link rel="stylesheet" href="/main.css">
-  </head>
-  <body>
-    <header class="center-align">
-      <h1><i class="material-icons medium">public</i>Oh, the Places You'll Go!<i class="material-icons medium">public</i></h1>
-      <h4 class="tagLine">Create your travel bucket list to the top U.S. cities</h4>
-    </header>
-    <main class="row">
-      <div class="col s6 left-align">
-        <h5 class="center-align">Add a destination:</h5>
-        <form class="row" action="index.html" method="post">
-          <div class="input-field col s12">
-            <select id="city">
-              <option disabled selected>Choose a city</option>
-
-            </select>
-            <label>City</label>
-          </div>
-          <div class="input-field col s12">
-            <select id="state">
-              <option disabled selected>Choose a state</option>
-
-            </select>
-            <label>State</label>
-          </div>
-          <div class="input-field col s6">
-            <label for="days">How many days: </label>
-            <input id="days" type="number" min="1" max="90" name="days" value="1">
-            <!-- <button class="btn waves-effect waves-light deep-orange lighten-2" type="submit" name="button">Submit!<i class="material-icons right">flight_takeoff</i></button> -->
-          </div>
-          <div class="input-field col s12">
-            <a id="addLocation" class="btn waves-effect waves-light hoverable deep-orange lighten-2">ADD LOCATION
-              <i class="material-icons right">flight_takeoff</i></a>
-          </div>
-        </form>
+<head>
+  <meta charset="utf-8">
+  <title>Oh, the Places You'll Go!</title>
+  <link href="https://fonts.googleapis.com/css?family=Artifika|Passion+One" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/css/materialize.min.css">
+  <link rel="stylesheet" href="/main.css">
+</head>
+<body>
+  <header class="center-align">
+    <h1><i class="material-icons medium">public</i>Oh, the Places You'll Go!<i class="material-icons medium">public</i></h1>
+    <h4 class="tagLine">Create your travel bucket list</h4>
+  </header>
+  <main class="row">
+    <form class="col s6">
+      <div class="row">
+        <h5 class="center-align">ADD A DESTINATION:</h5>
+        <div class="input-field col s12">
+          <input id="city" type="text" class="validate">
+          <label for="city">City: </label>
+        </div>
+        <div class="input-field col s12">
+          <input id="state" type="text" class="validate">
+          <label for="state">State: </label>
+        </div>
       </div>
-      <div class="right-align">
-        <h5 class="center-align">Your travel list:</h5>
-        <table class="input-field col s6 striped highlight">
+      <div class="row">
+        <div class="input-field col s6">
+          <input id="rating" type="number" min="1" max="10" name="rating" value="1">
+          <label for="rating">Rating</label>
+        </div>
+        <div class="input-field col s6">
+          <button id="addLocation" type="submit" class="btn waves-effect waves-light hoverable teal lighten-2">ADD LOCATION
+              <i class="material-icons right">flight_takeoff</i></button>
+        </div>
+      </div>
+    </form>
+    <div class="right-align">
+      <h5 class="center-align">YOUR TRAVEL LIST:</h5>
+      <div class="listTable">
+        <table class="input-field col s12 highlight">
           <thead>
             <tr>
+              <th></th>
               <th>City</th>
               <th>State</th>
-              <th># of days</th>
+              <th>Rating</th>
+              <th>Edit/Remove</th>
             </tr>
-           </thead>
-           <tbody class="list">
+          </thead>
+          <tbody class="list">
 
-           </tbody>
+          </tbody>
         </table>
       </div>
-    </main>
-    <footer>
-    </footer>
-    <script
-  src="https://code.jquery.com/jquery-3.2.1.js"
-  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
-  crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/js/materialize.min.js"></script>
-    <script type="text/javascript" src="/app.js"></script>
-  </body>
+    </div>
+  </main>
+  <footer>
+  </footer>
+  <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/js/materialize.min.js"></script>
+  <script type="text/javascript" src="/app.js"></script>
+</body>
+
 </html>

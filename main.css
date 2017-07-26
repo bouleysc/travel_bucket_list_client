@@ -12,7 +12,6 @@ h4 {
 h5 {
   font-family: 'Passion One', cursive;
   margin-top: 0;
-  margin-bottom: 20px;
   text-decoration: underline;
 }
 
@@ -20,10 +19,7 @@ body {
   background-color: #bbdefb;
 }
 
-form {
-  margin-top:10px;
-  margin-bottom: 10px;
-}
-option {
-  color: indigo darken-4;
+.listTable {
+  max-height: 500px;
+  overflow-y: scroll;
 }
