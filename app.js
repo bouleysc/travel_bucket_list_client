@@ -11,13 +11,13 @@ const baseURL = 'https://peaceful-woodland-20463.herokuapp.com/places/';
 function travelList(data){
   for (var i=0; i < data.length; i++){
     $('.list').append
-    (`<tr>
+    (`<tr id="r${data[i].id}">
         <td>${i+1}.</td>
-        <td><a id="${data[i].id}" class="next btn-floating btn-small waves-effect waves-light hoverable blue"><i class="material-icons">add</i></a></td>
+        <td><a id="${data[i].id}" class="nextButton btn-floating btn-small waves-effect waves-light hoverable blue"><i class="material-icons">add</i></a></td>
         <td>${data[i].city}</td>
         <td>${data[i].state}</td>
         <td><input id="${data[i].id}" type="number" min="1" max="10" class="center-align" value="${data[i].rating}"></td>
-        <td><a id="${data[i].id}" class="remove btn-floating btn-small waves-effect waves-light hoverable red"><i class="material-icons">remove</i></a></td>
+        <td><a id="${data[i].id}" class="remove btn-floating btn-small waves-effect waves-light hoverable red"><i class="material-icons">clear</i></a></td>
       </tr>`);
   }
 }
@@ -32,7 +32,6 @@ function deletePlace() {
     })
     .then(data => {console.log(data)})
   })
-
 }
 
 function addPlace(){
@@ -49,7 +48,7 @@ function addPlace(){
 }
 
 function nextTrip(){
-  $('.next').one("click", function() {
+  $('.nextButton').one("click", function() {
     let id = $(this).attr('id');
     $.get(baseURL + id, function(data){
       $('.nextTrip').append(`<li>${data.city}, ${data.state}</li>`)

@@ -30,8 +30,13 @@ body {
 
 .next {
   background-color: #304ffe;
+  border-style: outset;
+  border-width: thick;
+  border-radius: 5px;
+  font-family: 'Artifika', serif;
 }
 
 li {
-  font-weight: bold;
+  font-size: 1.75em;
+  font-family: 'Passion One', cursive;
 }
