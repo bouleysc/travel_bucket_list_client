@@ -18,7 +18,7 @@ function travelList(data){
         <td>${data[i].city}</td>
         <td>${data[i].state}</td>
         <td><input id="${data[i].id}" type="number" min="1" max="10" class="center-align" value="${data[i].rating}"></td>
-        <td><a data-target="modal" name="${data[i].id}" class="edit btn-floating btn-small waves-effect waves-light hoverable blue modal-trigger"><i class="material-icons">edit</i></a>
+        <td><a data-target="modal" data-id="${data[i].id}" class="edit btn-floating btn-small waves-effect waves-light hoverable blue modal-trigger"><i class="material-icons">edit</i></a>
             <a id="${data[i].id}" class="remove btn-floating btn-small waves-effect waves-light hoverable red"><i class="material-icons">clear</i></a>
         </td>
       </tr>`);
@@ -40,32 +40,31 @@ function deletePlace() {
 function updateInfo() {
   $('.edit').click(function(event){
     event.preventDefault();
-    let id = $(this).attr('name');
+    let id = $(this).attr('data-id');
     $.get(baseURL + id, function(data){
       $('#modalCity').val(data.city);
       $('#modalState').val(data.state);
       $('#modalRating').val(data.rating);
     })
-    editPlace();
+    .then(editPlace(id))
   })
 }
 
-function editPlace(){
-  $('.modalEdit').click(function(){
-    let id = $(this).attr('name');
+function editPlace(id){
+  $('#modalEdit').click(function(event){
+    event.preventDefault();
     let edit = {
       city: $('#modalCity').val(),
       state: $('#modalState').val(),
-      rating: $('#modalRating').val()
+      rating: parseInt($('#modalRating').val())
     }
-
+    console.log(edit);
     $.ajax({
       url: baseURL + id,
-      type: 'PUT',
-      data: edit,
-      contentType: 'application/json'
+      method: 'PUT',
+      data: edit
     })
-    .then(addPlace)
+  .then(function(){window.location.reload()})
   })
 }
 
