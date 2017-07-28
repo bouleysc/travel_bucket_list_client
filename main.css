@@ -40,3 +40,10 @@ li {
   font-size: 1.75em;
   font-family: 'Passion One', cursive;
 }
+
+/*@media only screen and (max-width: 414px){
+  form, .tab {
+    width: 100%!important;
+    display: inline-block!important;
+  }
+}*/
