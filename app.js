@@ -53,11 +53,9 @@ function updateInfo() {
 function editPlace(id){
   $('#modalEdit').click(function(event){
     event.preventDefault();
-    let city = $('#modalCity').val();
-    let state = $('#modalState').val();
     let edit = {
-      city: city,
-      state: state,
+      city: $('#modalCity').val(),
+      state: $('#modalState').val(),
       rating: parseInt($('#modalRating').val())
     }
       $.ajax({
