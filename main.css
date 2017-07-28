@@ -16,20 +16,33 @@ h5 {
 }
 
 body {
-  background-color: #bbdefb;
+  background-image: url('/map.jpeg');
+  background-size: cover;
+}
+
+.input-field label, .input-field input[type=text]:focus + label, .input-field input[type=text].valid {
+}
+
+#modal {
+  background-image: url('/modal.jpeg');
+  font-weight: bold;
+  font-size: 2em;
 }
 
 .listTable {
   max-height: 500px;
   overflow-y: scroll;
+  font-weight: bold;
 }
 
 .input-field label {
   color: #000;
+  font-weight: bold;
 }
 
 .next {
   background-color: #304ffe;
+  text-decoration: underline;
   border-style: outset;
   border-width: thick;
   border-radius: 5px;
@@ -39,11 +52,5 @@ body {
 li {
   font-size: 1.75em;
   font-family: 'Passion One', cursive;
-}
 
-/*@media only screen and (max-width: 414px){
-  form, .tab {
-    width: 100%!important;
-    display: inline-block!important;
-  }
-}*/
+}
