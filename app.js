@@ -60,17 +60,12 @@ function editPlace(id){
       state: state,
       rating: parseInt($('#modalRating').val())
     }
-    if(typeof $city == 'string' && typeof $state == 'string') {
       $.ajax({
         url: baseURL + id,
         method: 'PUT',
         data: edit
       })
       .then(function(){window.location.reload()})
-    } else {
-      event.preventDefault();
-      alert("Invalid Entry")
-    }
   })
 }
 
@@ -80,14 +75,10 @@ function addPlace(){
     let $city = $('#city').val();
     let $state = $('#state').val();
     let $rating = parseInt($('#rating').val());
-  if(typeof city === 'string' && typeof state === 'string') {
     addItem($city,$state,$rating)
     $city = $('#city').val("");
     $state = $('#state').val("");
     $rating = $('#rating').val(1);
-    }  else {
-      alert("Invalid Entry")
-    }
   })
 }
 
