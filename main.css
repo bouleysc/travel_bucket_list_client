@@ -18,15 +18,13 @@ h5 {
 body {
   background-image: url('/map.jpeg');
   background-size: cover;
-}
-
-.input-field label, .input-field input[type=text]:focus + label, .input-field input[type=text].valid {
+  background-repeat: repeat-y;
 }
 
 #modal {
-  background-image: url('/modal.jpeg');
+  background-image: url('/world.jpeg');
   font-weight: bold;
-  font-size: 2em;
+  font-size: 1em;
 }
 
 .listTable {
