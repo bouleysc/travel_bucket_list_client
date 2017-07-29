@@ -14,10 +14,10 @@ function travelList(data){
     $('.list').append
     (`<tr>
         <td>${i+1}.</td>
-        <td><a id="${data[i].id}" class="nextButton btn-floating btn-small waves-effect waves-light hoverable blue"><i class="material-icons">add</i></a></td>
+        <td><a id="${data[i].id}" class="nextButton btn-floating btn-small waves-effect waves-light hoverable indigo accent-4"><i class="material-icons">add</i></a></td>
         <td>${data[i].city}</td>
         <td>${data[i].state}</td>
-        <td><input id="${data[i].id}" type="number" min="1" max="10" class="center-align" value="${data[i].rating}"></td>
+        <td>${data[i].rating}</td>
         <td><a data-target="modal" data-id="${data[i].id}" class="edit btn-floating btn-small waves-effect waves-light hoverable blue modal-trigger"><i class="material-icons">edit</i></a>
             <a id="${data[i].id}" class="remove btn-floating btn-small waves-effect waves-light hoverable red"><i class="material-icons">clear</i></a>
         </td>
@@ -47,6 +47,9 @@ function updateInfo() {
       $('#modalRating').val(data.rating);
     })
     .then(editPlace(id))
+    .then(() => {
+      Materialize.updateTextFields();
+    })
   })
 }
 
@@ -88,6 +91,8 @@ function nextTrip(){
     })
   })
 }
+
+
 
 function addItem(city,state,rating){
   let post = {

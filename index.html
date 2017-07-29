@@ -10,24 +10,27 @@
 </head>
 <body>
   <header class="center-align">
-    <h1><i class="material-icons medium">public</i>Oh, the Places You'll Go!<i class="material-icons medium">public</i></h1>
+    <h1><img class="world" src="/blueworld.png" alt="world">Oh, the Places You'll Go!<img class="world" src="/blueworld.png" alt="world"></h1>
     <h4 class="tagLine">Create your travel bucket list</h4>
   </header>
   <main class="row">
     <form class="col s12 m12 l6">
       <div class="row">
-        <h5 class="center-align"><i class="material-icons">add_location</i>ADD A DESTINATION:</h5>
+        <h5 class="center-align"><i class="material-icons">add_location</i> ADD A DESTINATION:</h5>
         <div class="input-field col s12 m12 l12">
+          <i class="material-icons prefix">location_city</i>
           <input id="city" type="text">
           <label for="city">City: </label>
         </div>
         <div class="input-field col s12 m12 l12">
+          <i class="material-icons prefix">explore</i>
           <input id="state" type="text">
           <label for="state">State: </label>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s6 m6 l6">
+          <i class="material-icons prefix">star</i>
           <input id="rating" type="number" min="1" max="10" name="rating" value="1">
           <label for="rating">Rating: </label>
         </div>
@@ -46,7 +49,7 @@
       </div>
     </form>
     <div class="right-align col s12 m12 l6">
-      <h5 class="center-align"><i class="material-icons">star</i>YOUR BUCKET LIST:</h5>
+      <h5 class="center-align"><i class="material-icons">library_books</i> YOUR BUCKET LIST:</h5>
       <div class="listTable">
         <table class="input-field highlight centered responsive-table">
           <thead>
@@ -69,20 +72,23 @@
         <div class="modal-content">
           <form>
             <div class="row">
-              <h5 class="center-align"><i class="material-icons">add_location</i>EDIT DESTINATION:</h5>
+              <h5 class="center-align"><i class="material-icons">edit_location</i> EDIT DESTINATION:</h5>
               <div class="input-field col s12">
+                <i class="material-icons prefix">location_city</i>
                 <input id="modalCity" type="text" value="">
-                <label for="modalCity" class="active"></label>
+                <label for="modalCity" class="active">City: </label>
               </div>
               <div class="input-field col s12">
+                <i class="material-icons prefix">explore</i>
                 <input id="modalState" type="text" value="">
-                <label for="modalState" class="active"></label>
+                <label for="modalState" class="active">State: </label>
               </div>
             </div>
             <div class="row">
               <div class="input-field col s6">
+                <i class="material-icons prefix">star</i>
                 <input id="modalRating" type="number" min="1" max="10" name="rating" value="">
-                <label for="modalRating" class="active"></label>
+                <label for="modalRating" class="active">Rating: </label>
               </div>
               <div class="input-field col s6">
                 <button id="modalEdit" type="submit" class="modal-action modal-close btn waves-effect waves-light hoverable">Submit Edit
@@ -93,6 +99,7 @@
       </div>
   </main>
   <footer>
+    <p><strong>&copy; Oh, the Places You'll Go!-Travel Bucket List</strong></p>
   </footer>
   <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/js/materialize.min.js"></script>

@@ -39,16 +39,22 @@ body {
 }
 
 .next {
+  height: 225px;
   background-color: #304ffe;
-  text-decoration: underline;
   border-style: outset;
   border-width: thick;
   border-radius: 5px;
   font-family: 'Artifika', serif;
+  max-height: 225px;
+  overflow-y: scroll;
 }
 
 li {
   font-size: 1.75em;
   font-family: 'Passion One', cursive;
 
+}
+
+.world {
+  max-width: 50px;
 }
