@@ -16,13 +16,13 @@ h5 {
 }
 
 body {
-  background-image: url('/map.jpeg');
+  background-image: url('/images/map.jpeg');
   background-size: cover;
   background-repeat: repeat-y;
 }
 
 #modal {
-  background-image: url('/world.jpeg');
+  background-image: url('/images/world.jpeg');
   font-weight: bold;
   font-size: 1em;
 }
