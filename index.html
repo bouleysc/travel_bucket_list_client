@@ -31,8 +31,8 @@
       <div class="row">
         <div class="input-field col s6 m6 l6">
           <i class="material-icons prefix">star</i>
-          <input id="rating" type="number" min="1" max="10" name="rating" value="1">
-          <label for="rating">Rating: </label>
+          <input id="rating" onchange="handleChange(this);" type="number" min="1" max="10" name="rating" value="1">
+          <label for="rating">Rating (1-10): </label>
         </div>
         <div class="input-field col s6 m6 l6">
           <button id="addLocation" type="submit" class="btn waves-effect waves-light hoverable teal lighten-2">ADD LOCATION
@@ -55,11 +55,11 @@
           <thead>
             <tr>
               <th></th>
-              <th>Next Trip</th>
-              <th>City</th>
-              <th>State</th>
-              <th>Rating</th>
-              <th>Edit/Remove</th>
+              <th>Next Trip:</th>
+              <th>City:</th>
+              <th>State:</th>
+              <th>Rating (1-10):</th>
+              <th>Edit/Remove:</th>
             </tr>
           </thead>
           <tbody class="list">
@@ -87,8 +87,8 @@
             <div class="row">
               <div class="input-field col s6">
                 <i class="material-icons prefix">star</i>
-                <input id="modalRating" type="number" min="1" max="10" name="rating" value="">
-                <label for="modalRating" class="active">Rating: </label>
+                <input id="modalRating" onchange="handleChange(input);" type="number" min="1" max="10" name="rating" value="">
+                <label for="modalRating" class="active">Rating (1-10): </label>
               </div>
               <div class="input-field col s6">
                 <button id="modalEdit" type="submit" class="modal-action modal-close btn waves-effect waves-light hoverable">Submit Edit

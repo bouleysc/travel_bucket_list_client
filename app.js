@@ -26,7 +26,7 @@ function travelList(data){
 }
 
 function deletePlace() {
-  $('.remove').click(function(){
+  $('.remove',).click(function(){
     let id = $(this).attr('id');
     $.ajax({
       url: baseURL + id,
@@ -46,10 +46,8 @@ function updateInfo() {
       $('#modalState').val(data.state);
       $('#modalRating').val(data.rating);
     })
+    .then(() => {Materialize.updateTextFields()})
     .then(editPlace(id))
-    .then(() => {
-      Materialize.updateTextFields();
-    })
   })
 }
 
@@ -76,23 +74,16 @@ function addPlace(){
     let $city = $('#city').val();
     let $state = $('#state').val();
     let $rating = parseInt($('#rating').val());
-    addItem($city,$state,$rating)
-    $city = $('#city').val("");
-    $state = $('#state').val("");
-    $rating = $('#rating').val(1);
+    if(typeof $city === 'string' && typeof $state === 'string' && isNaN($city) && isNaN($city)){
+      addItem($city,$state,$rating)
+      $city = $('#city').val("");
+      $state = $('#state').val("");
+      $rating = $('#rating').val(1);
+    } else {
+      alert("Invalid Entry")
+    }
   })
 }
-
-function nextTrip(){
-  $('.nextButton').one("click", function() {
-    let id = $(this).attr('id');
-    $.get(baseURL + id, function(data){
-      $('.nextTrip').append(`<li>${data.city}, ${data.state}</li>`)
-    })
-  })
-}
-
-
 
 function addItem(city,state,rating){
   let post = {
@@ -102,4 +93,33 @@ function addItem(city,state,rating){
   }
   $.post(baseURL, post)
   .then(function(){window.location.reload()})
+}
+
+
+function nextTrip(){
+  $('.nextButton').click(function(event) {
+    event.preventDefault();
+    let id = $(this).attr('id');
+    $.get(baseURL + id, function(data){
+      $('.nextTrip').append(`<li id="${data.id}">${data.city}, ${data.state}
+        <a class="nextTripRemove btn-floating btn-small waves-effect waves-light hoverable red">
+        <i class="material-icons">clear</i></a></li>`)
+    })
+    .then(deleteNextTrip)
+  })
+}
+
+function deleteNextTrip () {
+  $('.nextTripRemove').click(function(){
+    $(this).parent('li').empty();
+  });
+}
+
+function handleChange(input) {
+  if (input.value < 1) {
+    input.value = 1;
+  }
+  if (input.value > 10) {
+    input.value = 10;
+  }
 }
