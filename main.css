@@ -26,6 +26,8 @@ body {
 
 #modal {
   background-image: url('/images/world.jpeg');
+  background-size: cover;
+  background-color: #bbdefb;
   font-weight: bold;
   font-size: 1em;
 }
