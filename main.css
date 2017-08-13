@@ -32,6 +32,27 @@ body {
   font-size: 1em;
 }
 
+input#city,
+input#state,
+input#rating,
+input#modalCity,
+input#modalState,
+input#modalRating
+ {
+  border-bottom: 1px solid #00838f;
+  box-shadow: 0 1px 0 0 #00838f;
+}
+
+label,
+label.active,
+.prefix.active {
+  color: #00838f !important;
+}
+
+#modalEdit, #addLocation {
+  background-color: #00838f !important;
+}
+
 .listTable {
   max-height: 500px;
   overflow-y: scroll;
